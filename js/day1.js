@@ -34,7 +34,7 @@ function calculateFrequency(string) {
   // Write your code here
 
 var freq=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-  
+   var arr={};
 var i;
 
 for(i=0;i<string.length;i++){
@@ -45,11 +45,14 @@ for(i=0;i<string.length;i++){
   }
  
 }
-  var arr=[];
+  //console.log(freq);
+ 
    for(i=0;i<26;i++){
      if(freq[i]>0){
        //console.log(String.fromCharCode(i+97));
+//console.log(freq[i]);
        arr[String.fromCharCode(i+97)]= freq[i];
+       //console.log(arr[i]);
      }
    }
    console.log(arr) ;
