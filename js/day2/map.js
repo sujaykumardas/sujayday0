@@ -1,6 +1,7 @@
-var numbers = [4, 9, 16, 25];
+var arr=[1,2,3,4,5];
 
-function myFunction() {
-    x = document.getElementById("demo")
-    x.innerHTML = numbers.map(Math.sqrt);
-}
+var narr=arr.map(function(i){
+	return i*2;
+});
+
+document.write(narr);
