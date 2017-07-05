@@ -1,0 +1,37 @@
+function calculateFrequency(string) {
+  // Write your code here
+var chrset=[];
+var freq=[];
+var i,j=0,k=0,m=0;
+var ch;
+for(i=0;i<string.length;i++){
+  if(string[i].charCodeAt(0)>96&&string[i].charCodeAt(0)<123){
+    chrset[j]=string[i];
+    //ch=string[i];
+    j++;
+  }
+ 
+}
+  for(i=0;i<chrset.length;i++){
+    if(chrset[i]!=' '){
+    ch=chrset[i];
+    //console.log(ch);
+    freq[m]=1;
+    for(j=i+1;j<chrset.length;j++){
+      if(chrset[j]==ch){
+        freq[m]=freq[m]+1;
+        chrset[j]=' ';
+      }
+        
+    }
+   m=m+1;   
+    } 
+  }
+  
+  var str;
+  for(i=0;i<chrset.length;i++){
+    str[i]=chrset[i]+": "+freq[i];
+  }
+  console.log(str);
+  return str;
+}
