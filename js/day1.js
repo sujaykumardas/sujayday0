@@ -32,40 +32,28 @@ return sml;
 // Problem 2: Complete the calculateFrequency function that takes lowercase string as input and returns frequency of all english alphabet. (using only array, no in-built function)
 function calculateFrequency(string) {
   // Write your code here
-var chrset=[];
-var freq=[];
-var i,j=0,k=0,m=0;
-var ch;
+
+var freq=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+  
+var i;
+
 for(i=0;i<string.length;i++){
+  
   if(string[i].charCodeAt(0)>96&&string[i].charCodeAt(0)<123){
-    chrset[j]=string[i];
-    //ch=string[i];
-    j++;
+    freq[string[i].charCodeAt(0)-97]=freq[string[i].charCodeAt(0)-97]+1;
+    
   }
  
 }
-  for(i=0;i<chrset.length;i++){
-    if(chrset[i]!=' '){
-    ch=chrset[i];
-    //console.log(ch);
-    freq[m]=1;
-    for(j=i+1;j<chrset.length;j++){
-      if(chrset[j]==ch){
-        freq[m]=freq[m]+1;
-        chrset[j]=' ';
-      }
-        
-    }
-   m=m+1;   
-    } 
-  }
-  
-  var str;
-  for(i=0;i<chrset.length;i++){
-    str[i]=chrset[i]+": "+freq[i];
-  }
-  console.log(str);
-  return str;
+  var arr=[];
+   for(i=0;i<26;i++){
+     if(freq[i]>0){
+       //console.log(String.fromCharCode(i+97));
+       arr[String.fromCharCode(i+97)]= freq[i];
+     }
+   }
+   console.log(arr) ;
+   return arr;
 }
 
 // Problem 5: Complete the pluckName function that takes a JS Array, returns a JS Array containing only name
@@ -75,21 +63,20 @@ function pluckName(unpluckedArray) {
   
   var arr=[];
   
-  var i;
+  var i,j;
   //
-  if (unpluckedArray[0].hasOwnProperty('name'))   {
-    for(i=0;i<unpluckedArray.length;i++){
-      arr[i]=unpluckedArray[i].name;
+    
+    for(i=0,j=0;i<unpluckedArray.length;i++){
+      if (unpluckedArray[i].hasOwnProperty('name')){
+        arr[j]=unpluckedArray[i].name;
+        j++;
+      }
+      
     }
     console.log(arr);
     return arr;
     //Do this
-  }
-  else 
-  {
-    console.log(arr);
-    return arr;
-  }
+ 
     
   
   //var 
